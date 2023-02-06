@@ -26,5 +26,6 @@ while [[ 1 ]]
 do
 	printf "type here > "
 	read MSG
-	echo "$USER $MSG" >> /mnt/yandexdisk/chat
+	DATE="$(date "+%F %T")"
+	echo "$DATE $USER $MSG" >> /mnt/yandexdisk/chat
 done
