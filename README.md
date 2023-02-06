@@ -11,4 +11,4 @@ create passwd for davfs https://yandex.ru/support/id/authorization/app-passwords
 
 write account name and password into shell script that u downloaded from this repo
 
-start the script and start chatting!
+`sh ./anonimys_msgr.sh -init -setusername`
