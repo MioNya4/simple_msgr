@@ -1,6 +1,5 @@
 #!/bin/sh
 
-#OT PYTA!!!
 #itoa was here, nya~
 
 mkdir -p /mnt/yandexdisk || sudo mkdir -p /mnt/yandexdisk
@@ -20,22 +19,12 @@ echo 'and passwd which is'
 echo ur passwd for apps
 echo 'letsgo'
 mount -t davfs https://webdav.yandex.ru /mnt/yandexdisk
-# 
-# gcc anon.c &>/dev/null
-# if [ -f ./a.out ]
-# then
-# 	echo 'compiling ok'
-# else
-# 	echo 'error compiling binary ; make sure ur gcc works'
-# 	exit 2
-# fi
 
-# ./a.out -uname YOUR_USERNAME_HERE -tmpdir /tmp -chatfile chat -messagelimit 100 -msgfile msg -nohis
-
-USER='itoa'
+USER='username'
 tail -f /mnt/yandexdisk/chat &
 while [[ 1 ]]
 do
+	printf "type here > "
 	read MSG
 	echo "$USER $MSG" >> /mnt/yandexdisk/chat
 done
