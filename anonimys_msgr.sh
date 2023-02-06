@@ -2,7 +2,7 @@
 
 #itoa was here, nya~
 
-USER='username'
+USER='default'
 for var in "$@"
 do
     if [[ "$var" == "-init" ]]
@@ -12,15 +12,14 @@ do
 		then
 			echo ok
 		else
-				echo 'error permission folder create unable can not' 
-
+			echo 'error permission folder create unable can not' 
 			exit 1
 		fi
 
 		echo 'u will be asked 4 username which is'
-		echo "ur acc name (sry this cant be automated afaik)"
+		echo ur acc name
 		echo 'and passwd which is'
-		echo "ur passwd"
+		echo ur passwd (this cant be automated sry)
 		echo 'letsgo'
 		mount -t davfs https://webdav.yandex.ru /mnt/yandexdisk
 	fi
@@ -31,12 +30,14 @@ do
 		read USER
 	fi
 done
-
+touch /mnt/yandexdisk/chat
 echo "-------messages-------"
 tail -f /mnt/yandexdisk/chat &
+sleep 1
 while [[ 1 ]]
 do
-	printf "type here > "
+	# printf "\ntype here > "
+	# too buggy yet
 	read MSG
 	DATE="$(date "+%F %T")"
 	echo "$DATE $USER $MSG" >> /mnt/yandexdisk/chat
